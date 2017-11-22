@@ -3,7 +3,7 @@ mysql_databases: []
   - name: wordpress
     collation: utf8_general_ci
     encoding: utf8
-    replicate: 1
+    replicate: "1"
 mysql_users: []
   - name: wp
     host: "{{groups['Webservers']|join(',')}}"
