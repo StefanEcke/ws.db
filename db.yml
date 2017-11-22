@@ -1,1 +1,13 @@
 ---
+- hosts: Database-Master
+  vars_files:
+    - vars/master.yml
+  roles:
+    - role: ansible-role-mysql
+      become: yes
+- hosts: Database-Slave
+  vars_files:
+    - vars/slave.yml
+  roles:
+    - role: ansible-role-mysql
+      become: yes
