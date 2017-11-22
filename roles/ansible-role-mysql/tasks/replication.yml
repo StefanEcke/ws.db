@@ -26,7 +26,8 @@
     msg: "pups"
 
 - name: Check master replication status.
-  mysql_replication: mode=getmaster
+  mysql_replication:
+    mode: getmaster
   delegate_to: "{{ mysql_replication_master }}"
   register: master
   when: >
