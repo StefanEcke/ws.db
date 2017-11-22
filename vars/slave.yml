@@ -5,9 +5,9 @@ mysql_max_binlog_size: "100M"
 mysql_binlog_format: "ROW"
 mysql_expire_logs_days: "10"
 mysql_replication_role: 'slave'
-mysql_replication_master: "{{groups['Database-Master']}}"
+mysql_replication_master: "{{groups['Database-Master'][0]}}"
 mysql_replication_user:
   name: replication
-  host: "{{groups['Database-Slave']}}"
+  host: "{{groups['Database-Slave'][0]}}"
   password: "{{ rep_pw }}"
   priv: "*.*:REPLICATION SLAVE,REPLICATION CLIENT"
