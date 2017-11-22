@@ -3,8 +3,8 @@
   mysql_user:
     name: "{{ mysql_replication_user.name }}"
     host: "{{ mysql_replication_user.host | default('%') }}"
-    password: "{{ rep_pw }}"
-#    password: "{{ mysql_replication_user.password }}"
+    #password: "{{ rep_pw }}"
+    password: "{{ mysql_replication_user.password }}"
     priv: "{{ mysql_replication_user.priv | default('*.*:REPLICATION SLAVE,REPLICATION CLIENT') }}"
     state: present
   when: >
