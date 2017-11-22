@@ -24,6 +24,6 @@
 # Configure MySQL.
 - include: configure.yml
 - include: secure-installation.yml
-- include: replication.yml
 - include: users.yml
+- include: replication.yml
 - include: databases.yml
