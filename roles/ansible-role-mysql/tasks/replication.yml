@@ -17,13 +17,12 @@
     mode: getslave
     login_user: "{{ mysql_replication_user[0].name }}"
     login_password: "{{ mysql_replication_user[0].password }}"
+    host: "{{ mysql_replication_user[0].host }}"
   ignore_errors: true
   register: slave
   when: >
     mysql_replication_role == 'slave'
     and (mysql_replication_master != '')
-- debug:
-    msg: "{{ mysql_replication_master }}"
 
 - name: Check master replication status.
   mysql_replication:
