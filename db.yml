@@ -1,5 +1,7 @@
 ---
 - hosts: Database-Master
+  vars:
+    rep_pw: bingo
   vars_files:
     - vars/master.yml
   roles:
