@@ -10,4 +10,4 @@ mysql_replication_user:
   name: replication
   host: "{{groups['Database-Slave']}}"
   password: "{{ rep_pw }}"
-  #priv: "*.*:REPLICATION SLAVE,REPLICATION CLIENT"
+  priv: "*.*:REPLICATION SLAVE,REPLICATION CLIENT"
