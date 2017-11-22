@@ -2,10 +2,10 @@
 - name: Ensure replication user exists on master. "{{ rep_pw }}"
   mysql_user:
     name: "{{ mysql_replication_user[0].name }}"
-    host: "{{ mysql_replication_user.host | default('%') }}"
+    host: "{{ mysql_replication_user[0].host | default('%') }}"
     #password: "{{ rep_pw }}"
-    password: "{{ mysql_replication_user.password }}"
-    priv: "{{ mysql_replication_user.priv | default('*.*:REPLICATION SLAVE,REPLICATION CLIENT') }}"
+    password: "{{ mysql_replication_user[0].password }}"
+    priv: "{{ mysql_replication_user[0].priv | default('*.*:REPLICATION SLAVE,REPLICATION CLIENT') }}"
     state: present
   when: >
     (mysql_replication_role == 'master')
