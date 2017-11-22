@@ -22,7 +22,9 @@
   when: >
     mysql_replication_role == 'slave'
     and (mysql_replication_master != '')
-
+- debug:
+  msg: "pups"
+  
 - name: Check master replication status.
   mysql_replication: mode=getmaster
   delegate_to: "{{ mysql_replication_master }}"
