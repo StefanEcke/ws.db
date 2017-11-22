@@ -28,6 +28,7 @@
 - name: Check master replication status.
   mysql_replication:
     mode: getmaster
+  ignore_errors: true
   delegate_to: "{{ mysql_replication_master }}"
   register: master
   when: >
